@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h1>Detected Pieces</h1>
+    <img src="{{ image_path }}" width="600"><br><br>
+
+    {% if predictions %}
+        <ul>
+            {% for p in predictions %}
+                <li>{{ p.label }} (Confidence: {{ p.confidence }})</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No pieces detected.</p>
+    {% endif %}
+
+    <a href="/">Try another image</a>
+</body>
+</html>
